@@ -5,8 +5,8 @@ let initialState = {
 
 function reducer(state = initialState, action) {
   const {type, payload} = action
-  console.log('type', type)
-  console.log('type', payload)
+  // console.log('type', type)
+  // console.log('type', payload)
   switch(type) {
     case "ADD_CONTACT":
       return{
@@ -19,7 +19,7 @@ function reducer(state = initialState, action) {
           },
         ],
       };
-    case "SEARCH_BY_USERNAME":
+    case "SEARCH_BY_NAME":
       return { ...state, keyword: payload.keyword };
     default:
       return { ...state };

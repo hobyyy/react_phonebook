@@ -10,6 +10,7 @@ const ContactForm = () => {
     event.preventDefault();
     dispatch({type:"ADD_CONTACT", payload:{name, phoneNum}})
   }
+  
   return (
     <div>
       <Form onSubmit={addContact}>
@@ -18,7 +19,10 @@ const ContactForm = () => {
           <Form.Control 
             type="text" 
             placeholder="Enter Name"  
-            onChange={(event)=>setName(event.target.value)}
+            onChange={(event)=>{
+              console.log('name', event.target.value)
+              setName(event.target.value)
+            }}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formContact">

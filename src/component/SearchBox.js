@@ -5,21 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 const SearchBox = () => {
   const [keyword, setKeyword] = useState("");
   const dispatch = useDispatch();
-  let {contact} = useSelector((state) => state);
+
   const searchByName = (event) => {
     event.preventDefault();
     dispatch({type : "SEARCH_BY_NAME", payload:{keyword}})
   }
+
   return (
     <Form onSubmit={searchByName}>
       <Row>
         <Col lg={10}>
           <Form.Control 
             type="text" 
-            placeholder="Enter Name" 
-            onChange={(event) => setKeyword(
-              console.log('rrr',event)
-            )}
+            placeholder="Enter Name For Search" 
+            onChange={(event) => setKeyword(event.target.value)}
           />
         </Col>
         <Col lg={2}>
